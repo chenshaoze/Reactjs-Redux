@@ -1,4 +1,4 @@
-
+import { SUCCESS } from '../actions/studentManageActions'
 
 const loadStudentInfo = (state) => {
 	return {...state, 
@@ -30,10 +30,10 @@ const loadStudentInfo = (state) => {
 const studentManageReducer = (state={students:[]}, action) => {
 	console.log(action)
 	switch(action.type) {
-		case 'LOAD_STUDENT_INFO':
-			return loadStudentInfo(state);
+		case SUCCESS:
+			return {...state, students: action.data}
 		default:
-			return state;
+			return state
 	}
 }
 

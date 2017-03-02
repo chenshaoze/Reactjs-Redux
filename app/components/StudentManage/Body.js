@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {bindActionCreators} from 'redux';
-import {actions} from '../../actions/studentManageActions';
+import {studentInfoActions} from '../../actions/studentManageActions';
 
 class Body extends Component {
 
@@ -54,7 +54,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        loadStudentInfo: bindActionCreators(actions.loadStudentInfo, dispatch)
+        loadStudentInfo: bindActionCreators(studentInfoActions.request, dispatch)
     }
 }
 
